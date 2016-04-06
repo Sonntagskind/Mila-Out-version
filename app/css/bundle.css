@@ -1,0 +1,775 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+*::-webkit-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:focus {
+  outline: none;
+}
+
+
+
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/******  Reset *******/
+
+@font-face {
+  font-family: 'Georgia Bold';
+  src: url("../../../fonts/Georgia Bold.ttf") format('truetype');
+}
+
+.wrap {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0;
+}
+
+.headerMenu {
+  background: rgba(37,66,156,0.8);
+  height: 50px;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  left: 0;
+}
+
+.headerMenu--top {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.headerMenu--top li {
+  display: inline-block;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.headerMenu--top li a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/****** Mobile menu ******/
+
+.headerMenu--mob {
+  display: none;
+  padding: 10px;
+}
+
+.headerMenu--mob li {
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.headerMenu--mob li a {
+  color: #fff;
+}
+
+.headerMenu--mob--active {
+  background: rgba(37,66,156,1);
+  height: 200px;
+  transition-duration: 0.4s;
+}
+
+.headerMenu--mob--default {
+  background: rgba(37,66,156,0.8);
+  height: 50px;
+  transition-duration: 0.2s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.appear {
+  display: block;
+  animation: appear 0.5s ease-in-out both;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.disappear {
+  display: none;
+  animation: disappear 0.2s ease-in-out both;
+}
+
+/****** Mobile menu icon ******/
+
+.mobMenu__btn {
+  display: none;
+}
+
+.mobMenu__icon {
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  font-size: 0;
+  z-index: 1000;
+  text-indent: -9999px;
+  position: fixed;
+  display: block;
+  top: 2px;
+}
+
+.mobMenu__icon span {
+  display: block;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  background: #fff;
+  position: absolute;
+}
+
+.mobMenu__icon span::before,
+.mobMenu__icon span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  content: "";
+}
+
+.mobMenu__icon span::before {
+  top: -12px;
+}
+
+.mobMenu__icon span::after {
+  bottom: -12px;
+}
+
+.mobMenu__icon--x {
+  background-color: transparent;
+}
+
+.mobMenu__icon--x span::before,
+.mobMenu__icon--x span::after {
+  transition-duration: 0.2s, 0.2s;
+  transition-delay: 0.1s, 0s;
+}
+
+.mobMenu__icon--x span::before {
+  transition-property: top, transform;
+}
+
+.mobMenu__icon--x span::after {
+  transition-property: bottom, transform;
+}
+
+.mobMenu__icon--x.active {
+  background-color: transparent;
+}
+
+.mobMenu__icon--x.active span {
+  background: none;
+}
+
+.mobMenu__icon--x.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mobMenu__icon--x.active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.mobMenu__icon--x.active span::before,
+.mobMenu__icon--x.active span::after {
+  transition-delay: 0s, 0.1s;
+}
+
+/*********** Section Ads ************/
+
+.ads {
+  background: linear-gradient(to bottom, #1e5799 0%,#2650a6 23%,#2650a6 23%,#207cca 99%,#207cca 99%,#7db9e8 100%);
+  /* W3C */
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 275px;
+  padding-top: 50px;
+}
+
+.ads__logo {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -103px;
+}
+
+.ads__content {
+  top: 230px;
+  width: 100%;
+  position: absolute;
+}
+
+.ads__header {
+  font-weight: 300;
+  color: #fff;
+  font-size: 60px;
+  line-height: 70px;
+  margin: 5px 0 20px;
+}
+
+.ads__description {
+  color: #fff;
+  font-size: 13px;
+}
+
+.ads__button {
+  padding-top: 455px;
+  z-index: 999;
+  position: relative;
+  display: inline-block;
+}
+
+.btn__big {
+  border-radius: 35px;
+  font-size: 21px;
+  line-height: 30px;
+  padding: 16px 50px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn__mid {
+  border-radius: 35px;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 8px 60px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn--yellow {
+  background-color: #ffd919;
+  color: #000;
+  transition: background-color 0.1s ease-in-out;
+}
+
+a.btn--yellow:hover {
+  color: #fff;
+  background-color: #f39c12;
+  cursor: pointer;
+  transition-delay: .1s linear;
+}
+
+.ads__bgr {
+  width: 100%;
+  position: absolute;
+  background: url("../../../images/ads-bgr.png") no-repeat center;
+  background-size: 100%;
+  bottom: 0;
+  background-position: 0 bottom;
+  height: 370px;
+  z-index: 10;
+}
+
+/*********** Section Rules ************/
+
+.rules {
+  background-color: #fff;
+  padding: 100px 210px 185px;
+}
+
+.rules__content {
+  width: 420px;
+  float: left;
+  z-index: 20;
+  position: relative;
+}
+
+.rules__header,
+.tour__header,
+.prizes__header {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.rules__description {
+  line-height: 30px;
+  padding: 30px 0 15px 0;
+}
+
+.btn--pink {
+  color: #fff;
+  background-color: #3a66b0;
+  transition: background-color 0.2s ease;
+}
+
+.btn--pink:hover {
+  background-color: #379adc;
+  transition-delay: .1s;
+  color: #000;
+}
+
+.rules__images {
+  position: relative;
+}
+
+.rules__images img {
+  position: absolute;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.delay-01 {
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
+
+.delay-03 {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.delay-05 {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+.buds {
+  top: 120px;
+  z-index: 12;
+  right: 190px;
+}
+
+.pads {
+  top: 125px;
+  z-index: 11;
+  right: 66px;
+}
+
+.napkins {
+  top: 40px;
+  right: 0px;
+  z-index: 10;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/*********** Section Tour ************/
+
+.tour {
+  background-color: #e0ebef;
+  position: relative;
+  padding-bottom: 530px;
+  width: 100%;
+}
+
+.tour__content {
+  left: 50%;
+  margin-left: -245px;
+  position: absolute;
+  width: 490px;
+  z-index: 11;
+  top: 80px;
+}
+
+.tour__bgr {
+  width: 100%;
+  position: absolute;
+  background: url("../../../images/tour-bgr.png") no-repeat center;
+  bottom: 0;
+  background-position: 0 bottom;
+  height: 370px;
+  z-index: 10;
+  background-size: 100%;
+}
+
+/*********** Section Prizes ************/
+
+.prizes {
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.prizes__header {
+  text-align: center;
+  padding: 80px 0;
+  margin: 0;
+}
+
+.prizes__content {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 120px;
+}
+
+.prizes__content--circle1,
+.prizes__content--circle2,
+.prizes__content--circle3 {
+  width: 310px;
+  height: 340px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.prizes__content img {
+  width: 240px;
+  height: 236px;
+}
+
+.prizes__content figcaption {
+  text-align: left;
+  padding: 45px 0 0 30px;
+}
+
+.prizes__content figcaption::before {
+  border-radius: 25px;
+  background-color: #ff1f69;
+  color: #fff;
+  float: left;
+  font-family: 'Georgia Bold';
+  font-size: 20px;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  line-height: 45px;
+}
+
+.prizes__content--circle1 figcaption::before {
+  content: "3";
+}
+
+.prizes__content--circle2 figcaption::before {
+  content: "10";
+}
+
+.prizes__content--circle3 figcaption::before {
+  content: "100";
+}
+
+.prizes__content--description {
+  margin-left: 70px;
+}
+
+.prizes__content--description p {
+  margin: 0;
+  padding: 0;
+}
+
+.prizes__button {
+  text-align: center;
+}
+
+/*********** Footer ************/
+
+.footer {
+  background-color: #e5007d;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.footer__contact {
+  color: #f8bfde;
+  font-family: 'PTSans Regular';
+  font-size: 12px;
+  display: inline-block;
+  padding: 53px 65px;
+  line-height: 19px;
+  text-align: left;
+}
+
+.footer__logo--mila {
+  vertical-align: top;
+  display: inline-block;
+  padding-top: 60px;
+}
+
+.footer__logo--lovata {
+  display: inline-block;
+  padding-top: 90px;
+  vertical-align: top;
+}
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width : 1200px) {
+  .rules {
+    text-align: center;
+    padding: 70px 0 150px;
+  }
+
+  .rules__images {
+    display: none;
+  }
+
+  .rules__content {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+/* Medium Devices, Desktops*/
+
+@media only screen and (max-width : 992px) {
+  /********** Headers ********/
+
+  .ads__header,
+  .rules__header,
+  .tour__header,
+  .prizes__header {
+    font-size: 50px;
+  }
+
+  /********* Prizes blocks full width ********/
+
+  .prizes__content--circle1,
+  .prizes__content--circle2,
+  .prizes__content--circle3 {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .prizes__content figcaption {
+    margin: auto;
+    width: 40%;
+  }
+
+  .prizes__content {
+    padding-bottom: 60px;
+  }
+
+  /******* Footer *******/
+
+  .footer__contact {
+    margin: 0 auto;
+  }
+
+  .footer__logo--mila {
+    width: 100%;
+  }
+
+  .footer__logo--lovata {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width : 768px) {
+  /******* Sections description *******/
+
+  .ads__description,
+  .tour__description,
+  .rules__description {
+    padding: 0 15px;
+  }
+
+  /******* Section Ads ********/
+
+  .ads {
+    padding-bottom: 150px;
+  }
+
+  /********** Headers ********/
+
+  .ads__header,
+  .rules__header,
+  .tour__header,
+  .prizes__header {
+    font-size: 35px;
+    line-height: 40px;
+    width: 100%;
+  }
+
+  /****** Buttons ******/
+
+  .btn__big {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 16px 35px;
+  }
+
+  .btn__mid {
+    line-height: 25px;
+    padding: 8px 35px;
+  }
+
+  /***** Prizes ****/
+
+  .prizes__content figcaption {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .prizes__content figcaption:before {
+    left: 50%;
+    margin-left: -25px;
+    position: absolute;
+  }
+
+  .prizes__content--description {
+    padding-top: 65px;
+    margin: 0;
+    text-align: center;
+  }
+
+  /****** Footer ******/
+
+  .footer__contact {
+    padding: 20px 50px;
+  }
+
+  .footer {
+    padding-bottom: 40px;
+  }
+
+  .footer__logo--mila {
+    padding-top: 20px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width : 550px) {
+  /***** Header menu ****/
+
+  .mobMenu__btn {
+    display: block;
+  }
+
+  .headerMenu--top {
+    display: none;
+  }
+}
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width : 480px) {
+  /****Rules + Tour Sections ******/
+
+  .rules__content,
+  .tour__content {
+    min-width: 380px;
+    width: 100%;
+  }
+
+  .tour__content {
+    text-align: center;
+    position: relative;
+    left: 0;
+    margin-left: 0;
+  }
+
+  .tour {
+    padding-bottom: 200px;
+  }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width : 380px) {
+  /****Rules + Tour Sections ******/
+
+  .rules__content,
+  .tour__content {
+    min-width: 321px;
+  }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width : 320px) {
+  body {
+    width: 320px;
+  }
+}
